@@ -1,12 +1,12 @@
-#include"main.h"
+#include "main.h"
 /**
  * print_a;phapet - utilizes on the _putchar
  *
  */
-void print_alphabet(void)
+void print_alphabet(void);
 {
-    int ch;
-    for (ch = 'a'; ch <= 'z'; ch++)
-	    _putchar(ch);
-            _putchar('\n');
+	int ch;
+for (ch = 'a'; num <= 'z'; ch++)
+	_putchar(ch);
+_putchar('\n');
 }    
