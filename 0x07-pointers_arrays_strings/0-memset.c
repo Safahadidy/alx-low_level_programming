@@ -13,7 +13,7 @@ char *_memset(void *s, int b, unsigned int size)
 	unsigned int index;
 	unsigned char *memory = s, value = b;
 
-	for (index = 0; index < size; index++)
+	for (index = 0; size > 0; index++; size--)
 		memory[index] = value;
 
 	return (memory);
