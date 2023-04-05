@@ -5,8 +5,6 @@
  * @n: The length of a string
  * Return: the length of a string.
  */
-int _strlen_recursion(char *s);
-{
 int _strlen_recursion(char *s)
 {
 int n = 0;
