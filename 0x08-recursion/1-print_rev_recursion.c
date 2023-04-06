@@ -9,6 +9,7 @@ if (*s)
 {
 _putchar(*s);
 _print_rev_recursion(s + 1);
+}
 else
 _putchar('\n');
 }
