@@ -13,17 +13,27 @@ return (actual_prime(n, n - 1));
 }
 
 /**
- * div_prime - calculates if a number is prime recursively
- * @n: number to evaluate
+ * primeno - calculates if a number is prime recursively
+ * @num: number to evaluate
  * @i: iterator
  *
  * Return: 1 if n is prime, 0 if not
  */
-int div_prime(int n, int i)
+int primeno(int num, int i)
 {
 if (i == 1)
-return (1);
-if (n % i == 0 && i > 0)
-return (0);
-return (div_prime(n, i - 1));
+{
+return 1;
+}
+else
+{
+if (num % i == 0)
+{
+return 0;
+}
+else
+{
+return primeno(num, i - 1);
+} 
+}
 }
