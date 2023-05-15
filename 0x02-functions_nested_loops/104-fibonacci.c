@@ -18,7 +18,7 @@ int main(void)
 	unsigned long fib1_half1, fib1_half2, fib2_half1, fib2_half2;
 	unsigned long half1, half2;
 
-	for (count = 0; count <= 98; count++)
+	for (count = 0; count < 93; count++)
 	{
 		sum = fib1 + fib2;
 		printf("%lu, ", sum);
@@ -31,7 +31,7 @@ int main(void)
 	fib1_half2 = fib1 % 10000000000;
 	fib2_half2 = fib2 % 10000000000;
 
-	for (count = 93; count < 99; count++)
+	for (count = 93; count < 98; count++)
 	{
 		half1 = fib1_half1 + fib2_half1;
 		half2 = fib1_half2 + fib2_half2;
@@ -46,19 +46,4 @@ int main(void)
 	}
 	printf("\n");
 	return (0);
-}
-bef2 = (bef % l);
-aft1 = (aft / l);
-aft2 = (aft % l);
-for (i = 92; i < 99; ++i)
-{
-printf(", %lu", aft1 + (aft2 / l));
-printf("%lu", aft2 % l);
-aft1 = aft1 + bef1;
-bef1 = aft1 - bef1;
-aft2 = aft2 + bef2;
-bef2 = aft2 - bef2;
-}
-printf("\n");
-return (0);
 }
