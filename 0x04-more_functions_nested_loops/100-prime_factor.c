@@ -3,31 +3,31 @@
 /*
  * print_triangle - entry point
  * Description: Prints diagonals
- * @size: size of th
+ * @prime: size of th
  * Return: void
  */
+#include <stdio.h>
+#include <conio.h>
 
-void print_triangle(int size)
-
+int main(void)
 {
-	int row, hashes, spaces;
-	
-	if (size <= 0)
-	{
-		_putchar('\n');
-	}
-	else
-	{
-		for (row = 1; row <= size; row++)
-		{
-			for (spaces = size - row; spaces >= 1; spaces--)
-			{
-				_putchar(' ');
-			}
-			for (hashes = 1; hashes <= row; hashes++)				{
-				_putchar('#');
-			}
-			_putchar('\n');
+	long prime = 612852475143, div;
+
+
+		for (div = 2; div < (prime / 2); div ++)
+		{    
+		    if ((prime % 2) == 0)
+		    {
+		        prime /= div;
+		        continue;
+		    }
+			else if (((prime % div) == 0)&&(((prime )% 2) != 0))
+				prime /= div;
 		}
-	}
+		
+	
+
+	printf("%ld\n", prime);
+
+	return (0);
 }
