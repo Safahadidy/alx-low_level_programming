@@ -4,15 +4,14 @@
  * @s: string
  * Return: length
  */
-int _strlen(char *s)
+int _strlen(const char *str)
 {
-int counter = 0;
+	int length = 0;
 
-while (*s != '\0')
+while (*str != '\0')
 {
-counter++;
-s++;
+length++;
+*str ++;
 }
-
-return (counter);
+return (length);
 }
