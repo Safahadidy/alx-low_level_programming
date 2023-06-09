@@ -8,7 +8,7 @@
 char *_strpbrk(char *s, char *accept)
 {
 int i, j;
-char *p
+char *p;
 i = 0;
 while (s[i] != '\n') 
 {
@@ -24,5 +24,5 @@ j++;
 }
 i++;
 }
-return (0);
+return ('\0');
 }
