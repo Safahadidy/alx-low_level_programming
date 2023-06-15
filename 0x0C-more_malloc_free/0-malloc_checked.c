@@ -3,13 +3,14 @@
 /**
  * malloc_checked - allocates memory using malloc.
  * @b: array size
+ * s : string
  * Return: array refrance or NULL
  */
 void *malloc_checked(unsigned int b)
 {
-	void *s;
+void *s;
 	s = malloc(b);
-	if (s == Null)
-		exit (98);
-	return (s);
+if (s == Null)
+exit(98);
+return (s);
 }
