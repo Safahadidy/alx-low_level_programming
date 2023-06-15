@@ -1,4 +1,5 @@
-
+#include "main.h"
+#include <stdlib.h>
 /**
  * main - Entry point
  * @argc: The number of command-line arguments
@@ -8,7 +9,7 @@
  */
 int main(int argc, char *argv[])
 {
-int i, count = 0, cell;
+int i, count = 0, cell, number;
 int cells[] = {25, 10, 5, 2, 1};
 if (argc != 2)
 {
@@ -30,4 +31,6 @@ number = number - cell *cells[i];
 }
 }
 printf("%d\n", count);
+}
+return (0);
 }
