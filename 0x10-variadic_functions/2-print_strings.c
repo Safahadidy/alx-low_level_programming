@@ -4,25 +4,32 @@
 /**
  * print_strings - prints strings
  * @separator: string to be printed between
- * @n: number
+ * @n: inputs
  * Return: void or (nil)
  */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
-va_list argc;
-char *x;
-int i;
-va_start(argc, n);
-for (i = 0; i < n; i++)
-{
-x = va_arg(argc, char*);
-if (x != NULL)
-printf("%s", x);
-else
-printf("nill");
-if ((i != n - 1) && (separator))
-printf("%s", separator);
-}
-printf("\n");
-va_end(argc);
+	unsigned int x;
+	char *str;
+
+	va_list args;
+
+	va_start(args, n);
+
+	for (x = 0; x < n; x++)
+	{
+		str = va_arg(args, char *);
+
+	if (str)
+		printf("%s", str);
+
+	if (str == NULL)
+		printf("(nil)");
+
+
+	if (x < n - 1 && separator != NULL)
+		printf("%s", separator);
+	}
+	printf("\n");
+	va_end(args);
 }
