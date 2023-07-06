@@ -6,8 +6,8 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-int i;
-unsigned int sum = 0, len = 0;
+int i, len = 0;
+unsigned int sum = 0;
 if (b == NULL)
 return (0);
 for (i = 0; b[i] != '\0'; i++)
@@ -18,8 +18,23 @@ len++;
 }
 for (i = 0; i < len; i++)
 {
-sum += (b[i] - '0') * pow(2, len - i - 1);
+sum += (b[i] - '0') * _pow(2, len - i - 1);
 }
 return (sum);
 }
-
+/**
+ * _pow - calculate power
+ * @x: base
+ * @y: power
+ * Return: result
+ */
+unsigned int _pow(unsigned int x, unsigned int y)
+{
+unsigned int i;
+unsigned int result = 1;
+for (i = 0; i < y; i++)
+{
+result *= x;
+}
+return (result);
+}
