@@ -1,54 +1,45 @@
-#include"lists.h"
+#include "lists.h"
+
 /**
- * insert_dnodeint_at_index -  a function that inserts a new node
- * at a given position.
- *
- * @h: pointer to head of the list
- * @idx:.
- * @n:.
- * Return: new node if list is empty
-*/
+ * insert_dnodeint_at_index - Inserts a new node at a given position.
+ * @h: Pointer to the head of the list.
+ * @idx: Index of the position to insert the new node.
+ * @n: Value to be stored in the new node.
+ * Return: The address of the new node, or NULL if it fails.
+ */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *temp, *new_node;
-	unsigned int counter = 1;
-
-	temp = *h;
-	new_node = (dlistint_t *) malloc(sizeof(dlistint_t));
-	if (new_node == NULL)
-		return (NULL);
-	new_node->n = n;
-	new_node->next = NULL;
-	new_node->prev = NULL;
-	if ((*h) == NULL)
-	{
-		if (idx == 0)
+    dlistint_t *temp = *h;
+    dlistint_t *new_node = malloc(sizeof(dlistint_t));
+    if (new_node == NULL)
+        return NULL;
+    new_node->n = n;
+    new_node->prev = NULL;
+    new_node->next = NULL;
+		if(idx == 0)
 		{
-			*h = new_node;
-			return (new_node);
+			if (temp == NULL)
+				temp = new_node;
+			temp->prev = new_node;
+			new_node->next = temp;
+
 		}
-		return (NULL);
-	}
-	if (idx == 0)
-	{
-		new_node->next = *h;
-		(*h)->prev = new_node;
-		*h = new_node;
-		return (new_node);
-	}
-	while (temp->next != NULL && counter != idx)
-	{
-		temp = temp->next;
-		counter++;
-	}
-	if (counter == idx)
-	{
-		new_node->prev = temp;
-		new_node->next = temp->next;
-		if (temp->next != NULL)
-			temp->next->prev = new_node;
-		temp->next = new_node;
-		return (new_node);
-	}
-	return (NULL);
+		
+		unsigned int count = 1;
+		while(temp != NULL && count != idx)
+		{
+			count++;
+			temp = temp->next;
+		}
+		while (count == idx)
+		{
+			new_node->prev = temp;
+			new_node->next = temp->next;
+			if(temp->next != NULL)
+				temp->next->prev = new_node;
+			temp->next = new_node;
+			return new_node;
+		}
+		return NULL;
 }
+
